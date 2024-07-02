@@ -9,7 +9,6 @@ from auth.security import get_password_hash, pwd_context, create_access_token
 from config.settings import settings
 from repositories.user_repository import UserRepository
 from schemas.user import UserIn, UserInDBBase
-from auth.password_validator import validate_password
 from auth.email_validator import validate_email
 
 
@@ -42,7 +41,6 @@ class UserService:
         if self.repository.user_exists_by_username(data.username):
             raise HTTPException(status_code=400, detail="Username already registered")
 
-        validate_password(data.password)
         validate_email(data.email)
 
         hashed_password = get_password_hash(data.password)
