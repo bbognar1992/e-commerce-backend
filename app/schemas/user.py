@@ -1,6 +1,7 @@
 from pydantic import BaseModel, UUID4, validator, field_validator
 from typing import Optional
 
+from auth.email_validator import validate_email
 from auth.password_validator import validate_password
 
 
@@ -17,6 +18,11 @@ class UserIn(UserBase):
     @field_validator('password')
     def passwords_match(cls, v):
         validate_password(v)
+        return v
+
+    @field_validator('email')
+    def email_match(cls, v):
+        validate_email(v)
         return v
 
 
