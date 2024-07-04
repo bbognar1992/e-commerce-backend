@@ -30,7 +30,7 @@ def register(data: UserIn, session: Session = Depends(get_db)):
 
 
 @router.post("/login", status_code=201)
-def login(data: OAuth2PasswordRequestForm = Depends(),
+def get_token(data: OAuth2PasswordRequestForm = Depends(),
           session: Session = Depends(get_db)):
     """
     Login user.
