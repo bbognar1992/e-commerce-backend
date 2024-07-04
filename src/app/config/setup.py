@@ -1,8 +1,8 @@
 from fastapi import APIRouter, FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from config.settings import Settings
-from utils.init_db import create_tables
+from .settings import Settings
+from ..utils.init_db import create_tables
 
 
 def create_application(

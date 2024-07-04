@@ -2,7 +2,8 @@ import uuid
 
 from sqlalchemy import String, Boolean, Column, func, DateTime
 from sqlalchemy.dialects.postgresql import UUID
-from config.database import Base
+
+from ..config.database import Base
 
 
 class User(Base):

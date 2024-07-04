@@ -5,11 +5,11 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from auth.auth import get_current_user
-from config.database import async_get_db
-from crud.product_crud import crud_product
-from schemas.product import ProductCreate, ProductRead, ProductUpdate
-from schemas.user import UserIn
+from ...auth.auth import get_current_user
+from ...config.database import async_get_db
+from ...crud.product_crud import crud_product
+from ...schemas.product import ProductCreate, ProductRead, ProductUpdate
+from ...schemas.user import UserIn
 
 router = APIRouter(
     prefix="/product",

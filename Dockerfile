@@ -1,6 +1,6 @@
 FROM python:3.12
 
-WORKDIR ../app
+WORKDIR /code
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
@@ -13,3 +13,5 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 RUN addgroup --system app && adduser --system --group app
+
+COPY ./src/app /code/app

@@ -1,8 +1,9 @@
-from pydantic import BaseModel, UUID4, validator, field_validator
 from typing import Optional
 
-from auth.email_validator import validate_email
-from auth.password_validator import validate_password
+from pydantic import BaseModel, UUID4, field_validator
+
+from ..auth.email_validator import validate_email
+from ..auth.password_validator import validate_password
 
 
 class UserBase(BaseModel):

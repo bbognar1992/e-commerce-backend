@@ -3,8 +3,8 @@ from typing import Type, Optional
 from pydantic import UUID4
 from sqlalchemy.orm import Session
 
-from models.user import User
-from schemas.user import UserIn, UserInDBBase
+from ..models.user import User
+from ..schemas.user import UserIn, UserInDBBase
 
 
 class UserRepository:

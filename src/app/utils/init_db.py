@@ -1,5 +1,5 @@
-from config.database import Base, engine
-from models.user import User
+from ..config.database import Base, engine
+from ..models.user import User
 
 
 def create_tables():
