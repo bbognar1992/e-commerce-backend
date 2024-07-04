@@ -7,7 +7,7 @@ services:
             context: .
             dockerfile: Dockerfile
         container_name: web
-        command: uvicorn main:app --host 0.0.0.0 --port 8000 --log-level debug
+        command: uvicorn main:app --host 0.0.0.0 --port 8000 --log-level debug --reload
         volumes:
           - ./app:/app
         ports:
